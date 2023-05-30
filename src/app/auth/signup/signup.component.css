@@ -1,0 +1,80 @@
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    margin: auto;
+    padding-top: 150px;
+    padding-bottom: 180px;
+    min-height: 70vh;
+}
+
+.floating-label {
+    color: rgb(109, 109, 109)
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="name"] {
+    margin-bottom: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+button[type="submit"]:disabled {
+    background-color: rgb(173, 173, 173);
+    border-color: inherit;
+}
+
+input[type="name"].ng-invalid.ng-touched {
+    border: 1px solid rgb(255, 83, 83);
+}
+
+input[type="email"].ng-invalid.ng-touched {
+    border: 1px solid rgb(255, 83, 83);
+}
+
+input[type="password"].ng-invalid.ng-touched {
+    border: 1px solid rgb(255, 83, 83);
+    margin-bottom: -1px;
+}
+
+.error-text {
+    color: rgb(255, 83, 83);
+    font-size: 13px;
+    margin-left: 13px;
+}
+
+.error-border {
+    border: 1px solid rgb(255, 83, 83);
+}
+
+.unknown-error-text {
+    color: rgb(255, 83, 83);
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.google-btn {
+    margin-top: 10px;
+}
+
+.google-btn-text {
+    font-size: 16px;
+}

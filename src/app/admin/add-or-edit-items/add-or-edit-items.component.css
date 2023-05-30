@@ -1,0 +1,14 @@
+.add-edit-div {
+    padding-top: 70px;
+    padding-bottom: 180px;
+    min-height: 70vh;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 400;
+}

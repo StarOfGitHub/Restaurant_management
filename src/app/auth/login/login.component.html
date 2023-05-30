@@ -1,0 +1,41 @@
+<main class="form-signin">
+
+    <h1 class="h3 mb-3 fw-normal">Log in</h1>
+
+    <form [formGroup]="logInForm" (ngSubmit)="onLogIn()">
+
+        <div (click)="hideResponseErrors()">
+            <div class="form-floating">
+                <input type="email" class="form-control" [ngClass]="{'error-border': !isHideResponseErrors && errorObj.logIn.email != null}" id="floatingInput" placeholder="name@example.com" formControlName="email">
+                <label class="floating-label" for="floatingInput">Email address</label>
+
+                <span class="error-text" *ngIf="logInForm.controls.email.errors != null && logInForm.controls.email.touched">Please enter a valid email.</span>
+
+                <span class="error-text" *ngIf="!isHideResponseErrors && errorObj.logIn.email != null">{{errorObj.logIn.email}}</span>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" [ngClass]="{'error-border': !isHideResponseErrors && errorObj.logIn.password != null}" id="floatingPassword" placeholder="Password" formControlName="password">
+                <label class="floating-label" for="floatingPassword">Password</label>
+
+                <span class="error-text" *ngIf="logInForm.controls.password.errors != null && logInForm.controls.password.touched">Password length must be greater than 8.</span>
+
+                <span class="error-text" *ngIf="!isHideResponseErrors && errorObj.logIn.password != null" style="margin-top: -100px;">{{errorObj.logIn.password}}</span>
+            </div>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!logInForm.valid || isBtnClicked" style="margin-top: 10px;">
+            <i class="fa fa-arrow-right" *ngIf="!isLoggingIn"></i>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="isLoggingIn"></span>
+        </button>
+
+    </form>
+
+    <button class="w-100 btn btn-lg btn-primary google-btn" type="button" (click)="onLogInWithGoogle()" style="margin-bottom: 25px;">
+        <span class="google-btn-text">Log in with Google</span>
+    </button>
+
+    <span class="unknown-error-text" *ngIf="errorObj.logIn.unknown != null">{{errorObj.logIn.unknown}}</span>
+
+    <p class="mobile-only">Don't have an account? <a [routerLink]="['/sign-up']">Sign up</a></p>
+
+</main>
